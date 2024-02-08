@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoPractice = require('./mongo');
+const mongoPractice = require('./mongoose');
+const mongoose = require('mongoose');
 
 
 
@@ -12,4 +13,9 @@ app.post('/products', mongoPractice.createProduct);
 
 app.get('/products', mongoPractice.getProducts);
 
-app.listen(3000);
+mongoose
+    .connect('mongodb+srv://ustinovoleksij:<password>@cluster0.ldpsemf.mongodb.net/?retryWrites=true&w=majority')
+    .then()
+    .catch()
+
+
